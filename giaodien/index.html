@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phòng khám tư - Đặt lịch</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <script src="../xuli/js/booking.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    button {
+      background: green; color: white; border: none; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>📅 Đặt lịch khám bệnh</h2>
+  <form id="bookingForm">
+    <input type="text" name="patient_name" placeholder="Họ tên bệnh nhân" required />
+    <input type="tel" name="phone" placeholder="Số điện thoại" required />
+    <input type="date" name="date" required />
+    <input type="time" name="time" required />
+    <textarea name="note" placeholder="Ghi chú (nếu có)"></textarea>
+    <button type="submit">Đặt lịch</button>
+  </form>
+  <div id="message"></div>
+
+  <!-- ...existing code... -->
+  <div id="message"></div>
+  <a href="login.html" style="
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      z-index: 1000;
+  ">Đăng nhập bác sĩ</a>
+</body>
+</html>

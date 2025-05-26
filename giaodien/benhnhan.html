@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý bệnh nhân</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; border: 1px solid #ccc; }
+        button { margin: 0 4px; }
+        #recordsModal {
+            display: none; position: fixed; top: 10%; left: 50%; transform: translateX(-50%);
+            background: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000; min-width: 350px;
+        }
+        #recordsModal h3 { margin-top: 0; }
+        #recordsList { max-height: 250px; overflow-y: auto; margin-bottom: 10px; }
+        #recordsModal input, #recordsModal textarea, #recordsModal button { width: 100%; margin: 5px 0; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable@3.8.0/dist/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://unpkg.com/jspdf@2.5.1/dist/fonts/Roboto/Roboto-normal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+</head>
+<body>
+    <h2>Quản lý thông tin bệnh nhân</h2>
+    <form id="addPatientForm" style="margin-bottom:20px;">
+        <input type="text" id="newName" placeholder="Họ tên" required>
+        <input type="text" id="newPhone" placeholder="SĐT" required>
+        <input type="text" id="newNote" placeholder="Ghi chú">
+        <button type="submit">Thêm bệnh nhân</button>
+    </form>
+    <table id="patientsTable">
+        <thead>
+            <tr>
+                <th>Họ tên</th>
+                <th>SĐT</th>
+                <th>Ghi chú</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Modal hồ sơ khám bệnh -->
+    <div id="recordsModal">
+        <h3 id="modalTitle"></h3>
+        <div id="recordsList"></div>
+        <form id="addRecordForm">
+            <input type="date" id="recordDate" required>
+            <input type="text" id="diagnosis" placeholder="Chẩn đoán" required>
+            <textarea id="prescription" placeholder="Toa thuốc"></textarea>
+            <textarea id="recordNote" placeholder="Ghi chú"></textarea>
+            <button type="submit">Thêm hồ sơ</button>
+        </form>
+        <button onclick="closeRecordsModal()">Đóng</button>
+    </div>
+        <button onclick="exportPatientsPDF()" style="margin-bottom:15px;">Xuất báo cáo PDF</button>
+
+    <script src="../xuli/js/bn.js"></script>
+    <!-- Nhúng jsPDF nếu chưa có -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

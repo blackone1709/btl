@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý bác sĩ</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; border: 1px solid #ccc; }
+        button { margin: 0 4px; }
+    </style>
+</head>
+<body>
+    <h2>Quản lý bác sĩ</h2>
+    <form id="addDoctorForm" style="margin-bottom:20px;">
+        <input type="text" id="newFullName" placeholder="Tên bác sĩ" required>
+        <input type="text" id="newPhone" placeholder="Số điện thoại" required>
+        <input type="text" id="newWorkingHours" placeholder="Giờ làm việc (VD: 08:00-17:00)" required>
+        <button type="submit">Thêm bác sĩ</button>
+    </form>
+    <table id="doctorsTable">
+        <thead>
+            <tr>
+                <th>Tên bác sĩ</th>
+                <th>Số điện thoại</th>
+                <th>Giờ làm việc</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="../xuli/js/doctor.js"></script>
+</body>
+</html>

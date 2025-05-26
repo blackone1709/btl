@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng điều khiển Bác sĩ</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Bảng điều khiển</h1>
+    <button id="logoutBtn">Đăng xuất</button>
+    <button onclick="window.location.href='benhnhan.html'" style="margin-left:10px;">Quản lý bệnh nhân</button>
+    <button onclick="window.location.href='bs.html'" style="margin-left:10px;">Quản lý bác sĩ</button>
+    <h2>Danh sách lịch hẹn</h2>
+    <table id="appointmentsTable">
+        <thead>
+            <tr>
+                <th>Tên bệnh nhân</th>
+                <th>SĐT</th>
+                <th>Ngày</th>
+                <th>Giờ</th>
+                <th>Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu sẽ được JS thêm vào đây -->
+        </tbody>
+    </table>
+
+    
+
+    <script src="../xuli/js/cn.js"></script>
+</body>
+</html>
